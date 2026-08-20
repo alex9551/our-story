@@ -1,0 +1,939 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background: #08030d;
+    color: white;
+
+    font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+
+    overflow: hidden;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+
+    position: relative;
+}
+
+.page {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 40, 120, 0.12),
+            transparent 55%
+        ),
+        #08030d;
+}
+
+.page.active {
+    display: flex;
+
+    animation:
+        showPage 0.7s ease;
+}
+
+.content {
+    width: 90%;
+    max-width: 850px;
+
+    margin: auto;
+}
+
+.small {
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size:
+        clamp(48px, 10vw, 100px);
+
+    line-height: 1.2;
+
+    margin-bottom: 35px;
+}
+
+h1 span {
+    display: block;
+
+    color: #ff3d7f;
+
+    margin-top: 10px;
+}
+
+h2 {
+    font-size:
+        clamp(35px, 8vw, 70px);
+
+    margin-bottom: 30px;
+}
+
+h3 {
+    margin-bottom: 25px;
+
+    line-height: 1.8;
+}
+
+.description {
+    color:
+        rgba(255,255,255,0.7);
+
+    font-size: 18px;
+
+    line-height: 2;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+.big-heart {
+    font-size: 100px;
+
+    margin-bottom: 20px;
+
+    animation:
+        heartbeat 1.5s infinite;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+
+    border-radius: 50px;
+
+    padding:
+        15px 35px;
+
+    margin: 7px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2d75,
+            #9d2cff
+        );
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+button:hover {
+    transform:
+        translateY(-4px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 35px
+        rgba(255,45,117,0.25);
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.main-photo {
+    width: 320px;
+    height: 420px;
+
+    margin: 30px auto;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 25px 70px
+        rgba(255,45,117,0.25);
+
+    background: #151015;
+}
+
+.main-photo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+.main-photo:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 15px;
+
+    max-width: 700px;
+
+    margin: 30px auto;
+}
+
+.gallery-item {
+    aspect-ratio: 1;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: #241029;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform:
+        translateY(-8px)
+        scale(1.03);
+
+    box-shadow:
+        0 20px 50px
+        rgba(255,45,117,0.25);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   TIMELINE
+========================= */
+
+.timeline-page {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.timeline {
+    position: relative;
+
+    max-width: 700px;
+
+    margin: 50px auto;
+
+    text-align: right;
+}
+
+.timeline::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    right: 25px;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ff3d7f,
+            #9d2cff,
+            transparent
+        );
+}
+
+.timeline-item {
+    position: relative;
+
+    padding-right: 75px;
+
+    margin-bottom: 45px;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    right: 0;
+    top: 5px;
+
+    width: 52px;
+    height: 52px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff2d75,
+            #9d2cff
+        );
+
+    border:
+        4px solid
+        #08030d;
+
+    box-shadow:
+        0 0 25px
+        rgba(255,45,117,0.35);
+
+    z-index: 2;
+}
+
+.timeline-card {
+    padding: 25px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    backdrop-filter:
+        blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.timeline-card:hover {
+    transform:
+        translateX(-5px);
+
+    border-color:
+        rgba(255,61,127,0.4);
+}
+
+.timeline-card h3 {
+    margin:
+        8px 0 10px;
+
+    font-size: 22px;
+}
+
+.timeline-card p {
+    color:
+        rgba(255,255,255,0.65);
+
+    line-height: 2;
+}
+
+.timeline-date {
+    font-size: 13px;
+
+    color: #ff5c94;
+}
+
+.final-memory {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,45,117,0.12),
+            rgba(157,44,255,0.12)
+        );
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+.quiz {
+    max-width: 500px;
+
+    margin: 30px auto;
+
+    padding: 35px;
+
+    border-radius: 30px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+}
+
+.quiz button {
+    display: block;
+
+    width: 100%;
+
+    margin: 10px 0;
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+input {
+    display: block;
+
+    width: 100%;
+    max-width: 400px;
+
+    margin: 20px auto;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    border:
+        1px solid #444;
+
+    background: #151015;
+
+    color: white;
+
+    text-align: center;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+input:focus {
+    border-color:
+        #ff3d7f;
+}
+
+#message {
+    min-height: 30px;
+
+    margin-top: 20px;
+
+    color: #ff6598;
+}
+
+
+/* =========================
+   VOICE PLAYER
+========================= */
+
+.voice-player {
+    max-width: 550px;
+
+    margin:
+        30px auto 15px;
+
+    padding: 20px;
+
+    border-radius: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    text-align: right;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
+
+    backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.25);
+}
+
+.voice-play {
+    flex-shrink: 0;
+
+    width: 65px;
+    height: 65px;
+
+    padding: 0;
+    margin: 0;
+
+    border-radius: 50%;
+
+    font-size: 23px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.voice-info {
+    flex: 1;
+}
+
+.voice-title {
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+}
+
+.voice-status {
+    color:
+        rgba(255,255,255,0.55);
+
+    font-size: 13px;
+}
+
+.voice-progress {
+    max-width: 550px;
+
+    height: 5px;
+
+    margin:
+        0 auto 25px;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    background:
+        rgba(255,255,255,0.1);
+}
+
+#voiceProgress {
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff2d75,
+            #9d2cff
+        );
+
+    transition:
+        width 0.15s linear;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    max-width: 650px;
+
+    margin: 30px auto;
+
+    padding: 35px;
+
+    border-radius: 25px;
+
+    background:
+        rgba(255,255,255,0.05);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    line-height: 2.3;
+
+    text-align: right;
+}
+
+.letter p {
+    margin-bottom: 20px;
+
+    color:
+        rgba(255,255,255,0.8);
+}
+
+.letter strong {
+    display: block;
+
+    margin-top: 30px;
+
+    text-align: center;
+
+    font-size: 28px;
+
+    color: #ff5c94;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.love {
+    font-size: 35px;
+
+    margin: 30px 0;
+
+    color: #ff5c94;
+
+    font-weight: bold;
+}
+
+.final-text {
+    color:
+        rgba(255,255,255,0.55);
+
+    line-height: 2;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   MUSIC
+========================= */
+
+#musicControl {
+    position: fixed;
+
+    bottom: 25px;
+    left: 25px;
+
+    z-index: 9999;
+}
+
+#musicButton {
+    width: 55px;
+    height: 55px;
+
+    padding: 0;
+    margin: 0;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 22px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.15);
+
+    backdrop-filter:
+        blur(10px);
+}
+
+#musicButton.playing {
+    background:
+        linear-gradient(
+            135deg,
+            #ff2d75,
+            #9d2cff
+        );
+
+    animation:
+        musicPulse 1.5s infinite;
+}
+
+
+/* =========================
+   IMAGE VIEWER
+========================= */
+
+#imageViewer {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(0,0,0,0.92);
+
+    backdrop-filter:
+        blur(10px);
+
+    z-index: 20000;
+
+    padding: 30px;
+}
+
+#imageViewer.active {
+    display: flex;
+
+    animation:
+        fadeIn 0.3s ease;
+}
+
+#viewerImage {
+    max-width: 90vw;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,0.7);
+}
+
+#closeImageButton {
+    position: absolute;
+
+    top: 20px;
+    right: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    padding: 0;
+    margin: 0;
+
+    border-radius: 50%;
+
+    font-size: 35px;
+
+    line-height: 1;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes showPage {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1);
+    }
+}
+
+@keyframes heartbeat {
+
+    0%,
+    100% {
+        transform:
+            scale(1);
+    }
+
+    50% {
+        transform:
+            scale(1.15);
+    }
+}
+
+@keyframes musicPulse {
+
+    0% {
+        box-shadow:
+            0 0 0
+            rgba(255,45,117,0.4);
+    }
+
+    50% {
+        box-shadow:
+            0 0 25px
+            rgba(255,45,117,0.5);
+    }
+
+    100% {
+        box-shadow:
+            0 0 0
+            rgba(255,45,117,0.4);
+    }
+}
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .page {
+        padding:
+            25px 18px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .main-photo {
+        width: 240px;
+        height: 320px;
+    }
+
+    .timeline {
+        margin-top: 35px;
+    }
+
+    .timeline-item {
+        padding-right: 65px;
+    }
+
+    .timeline::before {
+        right: 22px;
+    }
+
+    .timeline-dot {
+        width: 46px;
+        height: 46px;
+    }
+
+    .timeline-card {
+        padding: 20px;
+    }
+
+    .letter {
+        padding:
+            25px 20px;
+    }
+
+    .voice-player {
+        padding: 15px;
+    }
+
+    .voice-play {
+        width: 58px;
+        height: 58px;
+    }
+
+}

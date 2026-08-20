@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ماهگردمون مبارک عشق زندگیم ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         BACKGROUND MUSIC
+    ================================= -->
+
+    <audio
+        id="backgroundMusic"
+        loop
+        preload="auto"
+    >
+        <source
+            src="assets/music.mp3"
+            type="audio/mpeg"
+        >
+    </audio>
+
+
+    <main>
+
+
+        <!-- ================================
+             PAGE 1
+        ================================= -->
+
+        <section
+            class="page active"
+            id="page1"
+        >
+
+            <div class="content">
+
+                <div class="heart">
+                    ❤️
+                </div>
+
+                <p class="small">
+                    برای خاص‌ترین آدم زندگی من
+                </p>
+
+                <h1>
+                    ماهگردمون مبارک
+                    <span>
+                        عشق زندگیم ❤️
+                    </span>
+                </h1>
+
+                <p class="description">
+                    یه چیز کوچیک برات آماده کردم...
+                    <br>
+                    فقط چند دقیقه با من همراه شو ❤️
+                </p>
+
+                <button onclick="nextPage()">
+                    شروع کنیم ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             PAGE 2
+        ================================= -->
+
+        <section
+            class="page"
+            id="page2"
+        >
+
+            <div class="content">
+
+                <p class="small">
+                    همه‌چیز از یک جا شروع شد
+                </p>
+
+                <h2>
+                    اولین خاطره ❤️
+                </h2>
+
+                <div class="main-photo">
+
+                    <img
+                        src="assets/photo1.jpg"
+                        alt="اولین خاطره ما"
+                    >
+
+                </div>
+
+                <p class="description">
+                    شاید اون روز نمی‌دونستیم
+                    قراره چه داستان قشنگی شروع بشه...
+                </p>
+
+                <button onclick="nextPage()">
+                    خاطره بعدی →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             PAGE 3
+        ================================= -->
+
+        <section
+            class="page"
+            id="page3"
+        >
+
+            <div class="content">
+
+                <p class="small">
+                    تکه‌هایی از ما
+                </p>
+
+                <h2>
+                    خاطراتمون 📸
+                </h2>
+
+                <p class="description">
+                    بعضی لحظه‌ها کوتاهن،
+                    ولی برای همیشه توی ذهن آدم می‌مونن.
+                </p>
+
+                <div class="gallery">
+
+                    <div
+                        class="gallery-item"
+                        onclick="openImage('assets/photo2.jpg')"
+                    >
+                        <img
+                            src="assets/photo2.jpg"
+                            alt="خاطره اول"
+                        >
+                    </div>
+
+                    <div
+                        class="gallery-item"
+                        onclick="openImage('assets/photo3.jpg')"
+                    >
+                        <img
+                            src="assets/photo3.jpg"
+                            alt="خاطره دوم"
+                        >
+                    </div>
+
+                    <div
+                        class="gallery-item"
+                        onclick="openImage('assets/photo4.jpg')"
+                    >
+                        <img
+                            src="assets/photo4.jpg"
+                            alt="خاطره سوم"
+                        >
+                    </div>
+
+                    <div
+                        class="gallery-item"
+                        onclick="openImage('assets/photo5.jpg')"
+                    >
+                        <img
+                            src="assets/photo5.jpg"
+                            alt="خاطره چهارم"
+                        >
+                    </div>
+
+                </div>
+
+                <button onclick="nextPage()">
+                    داستان ما ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             PAGE 4 - TIMELINE
+        ================================= -->
+
+        <section
+            class="page"
+            id="page4"
+        >
+
+            <div class="content timeline-page">
+
+                <p class="small">
+                    از اون روز تا امروز...
+                </p>
+
+                <h2>
+                    داستان ما ❤️
+                </h2>
+
+                <p class="description">
+                    چند تا از لحظه‌هایی که
+                    برای من هیچ‌وقت معمولی نمی‌شن.
+                </p>
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            ❤️
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                اولین روز
+                            </span>
+
+                            <h3>
+                                شروع یه اتفاق قشنگ
+                            </h3>
+
+                            <p>
+                                اینجا اولین خاطره خاصمون
+                                رو می‌نویسیم...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            📸
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                یه روز خاص
+                            </span>
+
+                            <h3>
+                                یکی از بهترین خاطراتمون
+                            </h3>
+
+                            <p>
+                                شاید برای بقیه یه روز معمولی بود،
+                                ولی برای من نه.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            💕
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-date">
+                                بعدتر...
+                            </span>
+
+                            <h3>
+                                بیشتر شدنِ ما
+                            </h3>
+
+                            <p>
+                                هرچی بیشتر گذشت،
+                                بیشتر فهمیدم چقدر
+                                بودنت برام مهمه.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            💖
+                        </div>
+
+                        <div class="timeline-card final-memory">
+
+                            <span class="timeline-date">
+                                امروز
+                            </span>
+
+                            <h3>
+                                ماهگردمون ❤️
+                            </h3>
+
+                            <p>
+                                و این داستان هنوز ادامه داره...
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <button onclick="nextPage()">
+                    یه چیز دیگه هم هست... ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             PAGE 5 - QUIZ
+        ================================= -->
+
+        <section
+            class="page"
+            id="page5"
+        >
+
+            <div class="content">
+
+                <div class="heart">
+                    😏
+                </div>
+
+                <p class="small">
+                    یه بازی کوچیک
+                </p>
+
+                <h2>
+                    چقدر منو می‌شناسی؟
+                </h2>
+
+                <div class="quiz">
+
+                    <h3>
+                        اولین چیزی که در تو
+                        توجهم رو جلب کرد چی بود؟
+                    </h3>
+
+                    <button onclick="quizAnswer()">
+                        لبخندت
+                    </button>
+
+                    <button onclick="quizAnswer()">
+                        نگاهت
+                    </button>
+
+                    <button onclick="quizAnswer()">
+                        طرز حرف زدنت
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             PAGE 6 - PASSWORD
+        ================================= -->
+
+        <section
+            class="page"
+            id="page6"
+        >
+
+            <div class="content">
+
+                <div class="heart">
+                    🔐
+                </div>
+
+                <p class="small">
+                    یه چیز مخفی
+                </p>
+
+                <h2>
+                    رمز رو پیدا کن
+                </h2>
+
+                <p class="description">
+                    فقط کسی که منو می‌شناسه
+                    می‌تونه وارد این قسمت بشه ❤️
+                </p>
+
+                <input
+                    id="password"
+                    type="text"
+                    inputmode="numeric"
+                    autocomplete="off"
+                    placeholder="رمز را وارد کن"
+                    onkeydown="handlePasswordKey(event)"
+                >
+
+                <button onclick="checkPassword()">
+                    باز کن 🔓
+                </button>
+
+                <p id="message"></p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             PAGE 7 - VOICE
+        ================================= -->
+
+        <section
+            class="page"
+            id="page7"
+        >
+
+            <div class="content">
+
+                <div class="heart">
+                    🎙️
+                </div>
+
+                <p class="small">
+                    این قسمت فقط برای توئه
+                </p>
+
+                <h2>
+                    یه چیزی می‌خوام بهت بگم...
+                </h2>
+
+                <p class="description">
+                    قبل از ادامه دادن،
+                    صدای منو گوش کن ❤️
+                </p>
+
+
+                <!-- Voice Player -->
+
+                <div class="voice-player">
+
+                    <button
+                        id="voiceButton"
+                        class="voice-play"
+                        onclick="toggleVoice()"
+                    >
+                        ▶
+                    </button>
+
+
+                    <div class="voice-info">
+
+                        <div class="voice-title">
+                            یه حرف از ته قلبم ❤️
+                        </div>
+
+                        <div
+                            class="voice-status"
+                            id="voiceStatus"
+                        >
+                            برای پخش لمس کن
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="voice-progress">
+
+                    <div
+                        id="voiceProgress"
+                    ></div>
+
+                </div>
+
+
+                <audio
+                    id="voiceAudio"
+                    preload="metadata"
+                >
+
+                    <source
+                        src="assets/voice.mp3"
+                        type="audio/mpeg"
+                    >
+
+                </audio>
+
+
+                <button onclick="nextPage()">
+                    ادامه ❤️
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             PAGE 8 - LETTER
+        ================================= -->
+
+        <section
+            class="page"
+            id="page8"
+        >
+
+            <div class="content">
+
+                <div class="heart">
+                    💌
+                </div>
+
+                <p class="small">
+                    یه نامه برای تو
+                </p>
+
+                <h2>
+                    برای عشق زندگیم
+                </h2>
+
+                <div class="letter">
+
+                    <p>
+                        شاید نتونم همیشه
+                        بهترین کلمات دنیا رو پیدا کنم...
+                    </p>
+
+                    <p>
+                        ولی بودن تو توی زندگی من
+                        خیلی از روزهای معمولی رو
+                        تبدیل به خاطره کرده.
+                    </p>
+
+                    <p>
+                        خنده‌هات،
+                        حرف زدنت،
+                        شیطنت‌هات
+                        و حتی لحظه‌های ساده‌مون
+                        برای من ارزشمندن.
+                    </p>
+
+                    <p>
+                        اگر قرار باشه دوباره
+                        انتخاب کنم،
+                        باز هم تو رو انتخاب می‌کنم.
+                    </p>
+
+                    <strong>
+                        خیلی خیلی عاشقتم ❤️
+                    </strong>
+
+                </div>
+
+                <button onclick="nextPage()">
+                    آخرین چیز مونده... ✨
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             PAGE 9 - FINAL
+        ================================= -->
+
+        <section
+            class="page"
+            id="page9"
+        >
+
+            <div class="content final-page">
+
+                <div class="big-heart">
+                    ❤️
+                </div>
+
+                <p class="small">
+                    ماهگردمون مبارک
+                </p>
+
+                <h2>
+                    هنوز اول داستانیم...
+                </h2>
+
+                <p class="description">
+                    امیدوارم ماه‌های خیلی بیشتری
+                    رو کنار هم جشن بگیریم.
+                </p>
+
+                <div class="love">
+                    خیلی خیلی عاشقتم ❤️
+                </div>
+
+                <p class="final-text">
+                    و هرچی زمان بگذره،
+                    بیشتر از قبل دوستت خواهم داشت...
+                </p>
+
+                <button onclick="restart()">
+                    دوباره از اول ↻
+                </button>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================================
+         MUSIC BUTTON
+    ================================= -->
+
+    <div id="musicControl">
+
+        <button
+            id="musicButton"
+            onclick="toggleMusic()"
+            aria-label="کنترل موزیک"
+        >
+            🎵
+        </button>
+
+    </div>
+
+
+
+    <!-- ================================
+         IMAGE VIEWER
+    ================================= -->
+
+    <div
+        id="imageViewer"
+        onclick="closeImage(event)"
+    >
+
+        <button
+            id="closeImageButton"
+            onclick="closeImage(event)"
+        >
+            ×
+        </button>
+
+        <img
+            id="viewerImage"
+            src=""
+            alt="تصویر بزرگ"
+        >
+
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
